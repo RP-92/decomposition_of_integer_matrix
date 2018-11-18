@@ -26,7 +26,6 @@ int main()
 	// en c++98 no se puede inicializar así, tienes que usar el constructor, pero estamos en c++11 :P
 
 	cout << "Matrix in [1][2]: " << matrix[1][2] << "\n" << "Matrix size = " << matrix.size() << "x" << matrix[0].size() << "\n";
-	nofun();
 
 	decompose( matrix );
 }

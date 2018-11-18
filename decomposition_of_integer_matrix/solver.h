@@ -7,6 +7,4 @@
 
 void decompose( std::vector< std::vector<int> >& );
 
-void nofun();
-
 #endif
