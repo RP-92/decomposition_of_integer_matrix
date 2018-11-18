@@ -1,0 +1,13 @@
+Para hacer funcionar esto:
+1.Ubuntu viene con el compilador ya instalado (g++), pero en caso de que no esté:
+sudo apt-get install g++
+
+2.Compilar, usando la terminal, si tu archivo principal se llama "main.cpp":
+gpp main.cpp -o nombre
+
+Donde nombre es el nombre que tendrá el ejecutable que se generará.
+
+3.Ejecutar:
+./nombre
+
+Nota: A mi me tomó tiempo darme cuenta, pero cpp = c plus plus :P
