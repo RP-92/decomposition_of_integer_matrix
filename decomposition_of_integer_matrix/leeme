@@ -3,9 +3,14 @@ Para hacer funcionar esto:
 sudo apt-get install g++
 
 2.Compilar, usando la terminal, si tu archivo principal se llama "main.cpp":
-gpp main.cpp -o nombre
+g++ main.cpp -o nombre
 
-Donde nombre es el nombre que tendrá el ejecutable que se generará.
+A esto le tenemos que decir que use c++11 en vez de la version del 98 (c++98)
+Eso se arregla cambiando lo anterior por esto:
+
+g++ -std=c++11 main.cpp -o nombre
+
+Donde nombre es el nombre que tendrá el ejecutable que se generará, en mi caso usé DOIM (decomposition of integer matrix).
 
 3.Ejecutar:
 ./nombre

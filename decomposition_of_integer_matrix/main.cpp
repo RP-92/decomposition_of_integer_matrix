@@ -18,5 +18,5 @@ int main()
 	// no se por que no me deja usar vector sin el std::, pero filo, esto es ver un arraylist
 	// creo que los >> siempre deben ir separados por una linea, pero no me cites por eso
 
-	std::cout << matrix[1][2] << \n;
+	std::cout << matrix[1][2] << "\n";
 }
