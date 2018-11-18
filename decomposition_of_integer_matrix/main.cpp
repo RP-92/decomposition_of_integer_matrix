@@ -16,7 +16,8 @@ int main()
 
 	std::vector< std::vector<int> > matrix = { {1, 3, 4}, {7, 2, 6} };
 	// no se por que no me deja usar vector sin el std::, pero filo, esto es ver un arraylist
-	// creo que los >> siempre deben ir separados por una linea, pero no me cites por eso
+	// creo que los > > siempre deben ir separados por un espacio, pero no me cites por eso
+	// en c++98 no se puede inicializar así, tienes que usar el constructor, pero estamos en c++11 :P
 
 	std::cout << matrix[1][2] << "\n";
 }
