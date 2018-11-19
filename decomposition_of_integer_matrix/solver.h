@@ -7,4 +7,8 @@
 
 void decompose( std::vector< std::vector<int> >& );
 
+bool rowIsOccupied( vector<int>& );
+
+bool matrixIsOccupied( vector< vector<int> >& );
+
 #endif
