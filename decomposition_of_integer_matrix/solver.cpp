@@ -81,12 +81,69 @@ void decompose( vector< vector<int> >& matrix ){
 	// algoritmo 2.1
 
 	// algoritmo 2.2
+	vector< vector< vector<int> > > decomposition;
+	vector<int> coeficients;
+
+	vector< vector<int> > alfas;
 	vector< vector<int> > L;
 	int k = 0;
 	for( int i= 0; i<10; i++ ){
 	//while( matrixIsOccupied( matrix ) ){
 		k++;
 
+		vector< vector<int> > Y;
+		vector<int> alfa_per_row;
+
+		// elegir Im y generar Yk
+		for( int row = 0; row < matrix.size(); row++ ){
+			vector<int> newRow;
+			if( L[row].size() == 0 ){
+				for( int column = 0; column < matrix[0].size(); column++ ){
+					newRow.push_back(0);
+					alfa_per_row.push_back(-1);
+				}
+			}
+			else{
+				for( int column = 0; column < matrix[0].size(); column++ ){
+					if( column+1 < L[row][0][0] || column+1 >= L[row][0][1] ){newRow.push_back(0);}
+					else{newRow.push_back(1);}
+				}
+				alfa_per_row.push_back(alfas[row][0]);
+			}
+			Y.push_back(newRow);
+		}
+
+		// minimizar el alfa
+		int alfa = -1;
+		for( int row = 0; row < matrix.size(); row++ ){
+			if( alfa_per_row[row] > 0 ){
+				if( alfa == -1){alfa = alfa_per_row[row];}
+				else{
+					if(alfa > alfa_per_row[row]){alfa = alfa_per_row[row];}
+				}
+			}
+		}
+
+		// A = A - alfa*Y
+		for( int row = 0; row < matrix.size(); row++){
+			for( int column = 0; column.size(); column++ ){
+				matrix[row][column] = matrix[row][column] - alfa*Y[row][column];
+			}
+		}
+
+		// Agregar Y a la solucion final, lo mismo el alfa
+		decomposition.push_back(Y);
+		coeficients.push_back(alfa);
+
+		// re-calcular los alfa
+		for( int row = 0; row < matrix.size(); row++ ){
+			alfas[row][0] = alfas[row][0] - alfa;
+		// Eliminar los intervalos y alfa que no son necesarios ya
+			if( alfas[row][0] == 0 ){
+				alfas[row].erase(0);
+				L[row].erase(0);
+			}
+		}
 	}
 	return;
 }
@@ -108,6 +165,5 @@ bool matrixIsOccupied( vector< vector<int> >& matrix ){
 			}
 		}
 	}
-
 	return false;
 }
