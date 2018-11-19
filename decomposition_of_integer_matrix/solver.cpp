@@ -81,14 +81,14 @@ void decompose( vector< vector<int> >& matrix ){
 	// algoritmo 2.1
 
 	// algoritmo 2.2
-	vector< vector< vector<int> > > decomposition;
+	vector< vector< vector<int> > > decomposition; //dimension 1: número de la matriz, dim 2 y 3, la matriz en cuestión
 	vector<int> coeficients;
 
 	vector< vector<int> > alfas;
-	vector< vector<int> > L;
+	vector< vector< vector<int> > > L; //1era dim: filas; dim 2: numero de intervalo en esa fila; dim 3 inicio y fin de intervalo
 	int k = 0;
-	for( int i= 0; i<10; i++ ){
-	//while( matrixIsOccupied( matrix ) ){
+	//for( int i= 0; i<10; i++ ){ este for es para hacerlo correr en caso de fallar la condicion del while
+	while( matrixIsOccupied( matrix ) ){
 		k++;
 
 		vector< vector<int> > Y;
