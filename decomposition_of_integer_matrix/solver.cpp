@@ -83,7 +83,8 @@ void decompose( vector< vector<int> >& matrix ){
 	// algoritmo 2.2
 	vector< vector<int> > L;
 	int k = 0;
-	while( matrixIsOccupied( matrix ) ){
+	for( int i= 0; i<10; i++ ){
+	//while( matrixIsOccupied( matrix ) ){
 		k++;
 
 	}
