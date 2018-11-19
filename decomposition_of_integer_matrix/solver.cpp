@@ -93,7 +93,7 @@ void decompose( vector< vector<int> >& matrix ){
 bool rowIsOccupied( vector<int>& row ){
 	for( int column = 0; column < row.size(); column++ ){
 		if( row[column] != 0 ){
-			return true:
+			return true;
 		}
 	}
 	return false;
@@ -101,7 +101,7 @@ bool rowIsOccupied( vector<int>& row ){
 
 bool matrixIsOccupied( vector< vector<int> >& matrix ){
 	for( int row = 0; row < matrix.size(); row++ ){
-		for( int column = 0; column < matrix[0].size; column++ ){
+		for( int column = 0; column < matrix[0].size(); column++ ){
 			if( matrix[row][column] != 0 ){
 				return true;
 			}
