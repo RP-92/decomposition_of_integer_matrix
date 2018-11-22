@@ -20,7 +20,7 @@ int main()
 	// Cout es para imprimir por pantalla, el << funciona igual que el + en java cuando usas System.out.println()
 	// \n es para hacer salto de linea, debe ir dentro de doble comillas como si fuese texto.
 
-	vector< vector<int> > matrix = { {3, 2, 0, 0, 1}, {1, 0, 0, 3, 5} };
+	vector< vector<int> > matrix = { {0, 0, 4, 12, 16, 6, 2, 0, 0}, {0, 0, 2, 14, 14, 18, 4, 12, 0} };
 	// no se por que no me deja usar vector sin el std::, pero filo, esto es ver un arraylist
 	// creo que los > > siempre deben ir separados por un espacio, pero no me cites por eso
 	// en c++98 no se puede inicializar así, tienes que usar el constructor, pero estamos en c++11 :P

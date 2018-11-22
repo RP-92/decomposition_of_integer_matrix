@@ -16,7 +16,12 @@ void decompose( vector< vector<int> >& matrix ){
 		vector<int> newVector;
 		for( int column = 0; column < matrix[0].size() + 1; column++ ){
 			if( column == 0){
-				newVector.push_back( matrix[row][column] - matrix[row][column + 2] );
+				//if( matrix[row][column] == 0 ){
+				//	newVector.push_back( 0 );
+				//}
+				//else{
+				newVector.push_back( matrix[row][column] );
+				//}
 			}
 			else{
 				if( column == matrix[0].size() ){
@@ -95,6 +100,7 @@ void decompose( vector< vector<int> >& matrix ){
 			actual_k++;
 			vector <int> intervalo = {P_lists[row][0],Q_lists[row][0]};//saco la posición inicial de los listados
 			L[row].push_back(intervalo);
+			std::cout << "intervalo agregado: [" << intervalo[0]+1 << ", " << intervalo[1]+1 << " )\n";
 
 			int l = intervalo[0];
 			int r = intervalo[1];
@@ -117,6 +123,9 @@ void decompose( vector< vector<int> >& matrix ){
 			if( alpha == -diffMatrix[row][r] || 0 == actual_row[r] ){
 				Q_lists[row].erase(Q_lists[row].begin());
 			}
+
+			diffMatrix[row][l] -= alpha;
+			diffMatrix[row][r] += alpha;
 		}
 		std::cout << "\n";
 	}
