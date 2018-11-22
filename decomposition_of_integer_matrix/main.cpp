@@ -11,7 +11,7 @@ using namespace std;
 
 int main()
 {
-	cout << "Hello World!\n";
+	//cout << "Hello World!\n";
 	// std es un clase y cout un "método" de ella, esto debería escribirse std::cout... pero al haber usado "using namespace std" esto se simplifica
 	// técnicamente no lo es, pero para nuestros propósitos si
 	// la explicación es enredada y la sintáxis es diferente a la de un método en c++ (que es igual a java), pero sencilla
@@ -25,7 +25,7 @@ int main()
 	// creo que los > > siempre deben ir separados por un espacio, pero no me cites por eso
 	// en c++98 no se puede inicializar así, tienes que usar el constructor, pero estamos en c++11 :P
 
-	cout << "Matrix in [1][2]: " << matrix[1][2] << "\n" << "Matrix size = " << matrix.size() << "x" << matrix[0].size() << "\n";
+	cout << "Matrix size = " << matrix.size() << "x" << matrix[0].size() << "\n\n";
 
 	decompose( matrix );
 }
