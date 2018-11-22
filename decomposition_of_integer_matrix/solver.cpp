@@ -117,10 +117,10 @@ void decompose( vector< vector<int> >& matrix ){
 			}
 
 			if( rowIsOccupied(actual_row) == false ) break;
-			if( alpha == diffMatrix[row][l] || 0 == actual_row[l] ){
+			if( alpha == diffMatrix[row][l] ){
 				P_lists[row].erase(P_lists[row].begin());
 			}
-			if( alpha == -diffMatrix[row][r] || 0 == actual_row[r] ){
+			if( alpha == -diffMatrix[row][r] ){
 				Q_lists[row].erase(Q_lists[row].begin());
 			}
 
@@ -154,6 +154,7 @@ void decompose( vector< vector<int> >& matrix ){
 		// elegir Im y generar Yk
 		std::cout << "Y" << k << ":\n";
 		for( int row = 0; row < matrix.size(); row++ ){
+
 			vector<int> newRow;
 			std::cout << "| ";
 			if( L[row].size() == 0 ){
@@ -204,11 +205,13 @@ void decompose( vector< vector<int> >& matrix ){
 
 		// re-calcular los alfa
 		for( int row = 0; row < matrix.size(); row++ ){
-			alfas[row][0] = alfas[row][0] - alfa;
-		// Eliminar los intervalos y alfa que no son necesarios ya
-			if( alfas[row][0] == 0 ){
-				alfas[row].erase(alfas[row].begin());
-				L[row].erase(L[row].begin());
+			if( alfas[row].size() > 0 ){
+				alfas[row][0] = alfas[row][0] - alfa;
+			// Eliminar los intervalos y alfa que no son necesarios ya
+				if( alfas[row][0] == 0 ){
+					alfas[row].erase(alfas[row].begin());
+					L[row].erase(L[row].begin());
+				}
 			}
 		}
 	}
